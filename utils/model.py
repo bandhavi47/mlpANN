@@ -1,4 +1,5 @@
 import tensorflow as tf
+import logging
 
 class mlPerceptron:
   def model():
@@ -15,6 +16,6 @@ class mlPerceptron:
     METRICS = ["accuracy"]
 
     model_clf.compile(loss=LOSS_FUNCTION, optimizer=OPTIMIZER, metrics=METRICS)
-    model_clf.summary()
+    logging.info(model_clf.summary())
     return model_clf
  

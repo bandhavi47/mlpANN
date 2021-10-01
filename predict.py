@@ -24,5 +24,5 @@ def predictValue(X_new,filename):
 
 if __name__ == "__main__":
     _,_,_,_,X_test,y_test = load_data()
-    X_new = X_test[:3]
+    X_new = X_test[:5]
     predictValue(X_new,"outputValue")

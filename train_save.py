@@ -17,8 +17,7 @@ def trainModel(epochs,filename):
     X_valid, X_train, y_valid, y_train, X_test, y_test = load_data()
     VALIDATION = (X_valid, y_valid)
    
-    #history = 
-    model_clf.fit(X_train, y_train, epochs=epochs, validation_data=VALIDATION)
+    history = model_clf.fit(X_train, y_train, epochs=epochs, validation_data=VALIDATION)
 
     model_clf.evaluate(X_test, y_test)  
 
@@ -28,7 +27,7 @@ def trainModel(epochs,filename):
 
     model_clf.save(filePath) 
 
-    #return history.history
+    return history.history
 
 def savePlot(history, filename):
     plot_dir = "plots"
@@ -44,4 +43,4 @@ def savePlot(history, filename):
 if __name__ == "__main__":
     EPOCHS = 30
     history = trainModel(epochs=EPOCHS, filename="model.h5")
-    #savePlot(history,filename="plot.png")
+    savePlot(history,filename="plot.png")
