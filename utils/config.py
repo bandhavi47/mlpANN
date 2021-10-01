@@ -1,0 +1,9 @@
+EPOCHS = 30
+layer1 = 300
+layer2 = 100
+modelFilename="model.h5"
+plotFilename="plot.png"
+plot_dir = "plots"
+model_dir = "models"
+outputplot_dir = "output"
+log_dir = "logs"
