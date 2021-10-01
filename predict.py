@@ -1,11 +1,12 @@
 from utils.prepare_data import load_data
-from utils.model import mlPerceptron
+import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 
 def predictValue(X_new,filename):
-    model_clf = mlPerceptron.model()
+    modelPath = os.path.join('models',os.listdir('models')[0])
+    model_clf = tf.keras.models.load_model(modelPath)
     y_prob = model_clf.predict(X_new)
     y_prob.round(3)
     Y_pred= np.argmax(y_prob, axis=-1)
